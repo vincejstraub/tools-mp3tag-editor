@@ -2,6 +2,7 @@
 # This script automatically renames genre tags for .mp3 files by 
 # resetting the delimiter for genre tags using the eyed3 library. 
 
+
 import os
 import sys
 import glob
