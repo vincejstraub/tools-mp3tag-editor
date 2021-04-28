@@ -1,14 +1,22 @@
-# Author: Vince J. Straub
-# This script automatically renames genre tags for .mp3 files by 
-# resetting the delimiter for genre tags using the eyed3 library. 
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+"""
+Automatically renames genre tags for .mp3 files using the eyed3 library.
 
-import os
+The library eyed3 is used to load mp3 files, reset_genre then uses the 
+eyed3.mp3.Mp3AudioFile object and replace specific characters, i.e. '/'
+with ';' by default.
+"""
+
+import os   # standard library
 import sys
 import glob
 import path
-import eyed3
 
+import eyed3    # 3rd party packages
+
+__author__ = "Vince J. Straub"
 
 def main():
     # Read file paths
@@ -28,14 +36,12 @@ def main():
             audiofile.tag.save()
         except:
             print("Genre tag could not be changed")
-            
 
 def reset_genre(audiofile, chars={'/': '; '}):
     """
     Resets genre tag for eyed3.mp3.Mp3AudioFile object by 
     replacing specific characters, '/' replaced with ';'
     by default.
-    
     
     Args:
         audiofile (eyed3.mp3.Mp3AudioFile): mp3 audiofile.
@@ -52,7 +58,6 @@ def reset_genre(audiofile, chars={'/': '; '}):
     # Reset genre for single genre tags
     genre = genre.replace('()', '')
     return genre
-
 
 def read_mp3_file_paths(dir_path='cwd'):
     """
@@ -88,7 +93,6 @@ def read_mp3_file_paths(dir_path='cwd'):
             print('No .mp3 files found in directory path.')
 
     return mp3_file_paths 
-
 
 if __name__ == '__main__':
     main()
