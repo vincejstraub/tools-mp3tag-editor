@@ -2,6 +2,8 @@
 
 A collection of custom functions for making it easier to tag and edit metadata for mp3 files.
 
+## Files
+
 * `reset_genre.py`: automatically renames genre tags for .mp3 files by resetting the delimiter for genre tags.
 
 ## Requirements
