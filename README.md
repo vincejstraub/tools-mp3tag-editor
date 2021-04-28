@@ -1,34 +1,17 @@
-# Project Title
+# MP3 Tag Editor
 
-Project description.
+A collection of custom functions for making it easier to tag and edit metadata for mp3 files.
 
-Description of files contained in repository.
+* `reset_genre.py`: automatically renames genre tags for .mp3 files by resetting the delimiter for genre tags.
 
-## Installation and Setup
+## Requirements
+- Python 3.7.7
+- Pandas 1.1.0
+- eyed3 0.9.4
 
-* ...
-* ...
-
-If you are new to Git and GitHub, see [Getting started with GitHub](https://docs.github.com/en/github/getting-started-with-github) and [Using Git and GitHub for Team Collaboration](https://medium.com/anne-kerrs-blog/using-git-and-github-for-team-collaboration-e761e7c00281). 
-
-## Getting Started
-To start using the code and data in this repo:
-
-* ...
-* ...
-
-## Maintenance
-
-*  [Vince J. Straub](https://github.com/vincejstraub) (initial setup)
-* ...
-* ...
-
-See also the list of [contributors](insert link) who are participating in this project.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://github.com/vincejstraub/developing-exploration-behavior/blob/main/.github/CONTRIBUTING.md) for details on  code conventions, and the process for submitting changes via pull requests.
+Please follow the online instructions to install the required libraries, depending on your operating system and machine specifications. 
 
 ## License
 
-If using a shared private repository, explain that project is yet to be made publicly available hence no license is included otherwise include the license in a `.md` file.
+This code is being released with a permissive open-source license. You should feel free to use or adapt the code as long as you follow the terms of the license.
+
