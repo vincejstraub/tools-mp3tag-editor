@@ -27,16 +27,14 @@ def main():
             audiofile = eyed3.load(file)
             # Declare new genre value by resetting tag values
             genre = reset_genre(audiofile)
-            # Init genre tag
-            audiofile.initTag()
             # Store value in tag
             audiofile.tag.genre = u'{}'.format(genre)
             # Save to file
             audiofile.tag.save()
-        except:
+        except ValueError:
             print("Genre tag could not be changed")
 
-            
+
 def reset_genre(audiofile, chars={'/': '; '}):
     """
     Resets genre tag for eyed3.mp3.Mp3AudioFile object by
@@ -54,7 +52,7 @@ def reset_genre(audiofile, chars={'/': '; '}):
     # Replace each character with new character
     for old_char, new_char in chars.items():
         genre = genre.replace(old_char, new_char)
-        
+
     # Reset genre for single genre tags
     genre = genre.replace('()', '')
     return genre
@@ -66,14 +64,14 @@ def read_mp3_file_paths(dir_path='cwd'):
     asks user to provide different directory path if none are found.
 
     Args:
-        dir_path (str, default=cwd): path to directory containing 
-        .mp3 files or subdirectories with .mp3 files, defaults to 
+        dir_path (str, default=cwd): path to directory containing
+        .mp3 files or subdirectories with .mp3 files, defaults to
         current working directory.
 
     Returns:
         A list of file paths as strings.
     """
-    # Search for .mp3 files in current directory and subdirectories 
+    # Search for .mp3 files in current directory and subdirectories
     # if no directory path is provided
     if dir_path == 'cwd':
         mp3_file_paths = glob.glob('**/*.mp3', recursive=True)
