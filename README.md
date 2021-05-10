@@ -1,6 +1,6 @@
 # MP3 Tag Editor
 
-A collection of custom functions for making it easier to tag and edit metadata for mp3 files.
+A collection of utility functions for making it easier to edit tags and metadata for MP3 files.
 
 ## Files
 
